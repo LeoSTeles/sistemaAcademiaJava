@@ -5,6 +5,7 @@
 package controller;
 
 import view.LoginView;
+import view.MenuView;
 
 /**
  *
@@ -15,5 +16,11 @@ public class LoginController {
 
     public LoginController(LoginView view) {
         this.view = view;
+    }
+    
+    public void autenticar(){
+        //Buscar usuário no banco
+        MenuView telaMenu = new MenuView();
+        telaMenu.setVisible(true);
     }
 }

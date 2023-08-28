@@ -4,17 +4,23 @@
  */
 package view;
 
+import controller.LoginController;
+import javax.swing.JTextField;
+
 /**
  *
  * @author leona
  */
 public class LoginView extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -26,14 +32,14 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        EsqueciSenhaButton = new javax.swing.JButton();
+        EntrarButton = new javax.swing.JButton();
+        CadastrarButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldSenha = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,32 +47,37 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Esqueci minha senha");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, 30));
+        EsqueciSenhaButton.setBackground(new java.awt.Color(51, 51, 51));
+        EsqueciSenhaButton.setForeground(new java.awt.Color(255, 255, 255));
+        EsqueciSenhaButton.setText("Esqueci minha senha");
+        getContentPane().add(EsqueciSenhaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, 30));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Entrar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 120, 30));
+        EntrarButton.setBackground(new java.awt.Color(51, 51, 51));
+        EntrarButton.setForeground(new java.awt.Color(255, 255, 255));
+        EntrarButton.setText("Entrar");
+        EntrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntrarButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EntrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 120, 30));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Crie uma conta");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 13, -1, 30));
+        CadastrarButton.setBackground(new java.awt.Color(51, 51, 51));
+        CadastrarButton.setForeground(new java.awt.Color(255, 255, 255));
+        CadastrarButton.setText("Crie uma conta");
+        getContentPane().add(CadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 13, -1, 30));
 
         jLabel6.setText("Novo por aqui?");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
 
         jLabel5.setText("Senha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 350, 30));
+        getContentPane().add(jTextFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 350, 30));
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("E-mail ou login");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 110, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 350, 30));
+        getContentPane().add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 350, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -81,6 +92,10 @@ public class LoginView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EntrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtonActionPerformed
+        controller.autenticar();
+    }//GEN-LAST:event_EntrarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,17 +132,33 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getjTextFieldSenha() {
+        return jTextFieldSenha;
+    }
+
+    public void setjTextFieldSenha(JTextField jTextFieldSenha) {
+        this.jTextFieldSenha = jTextFieldSenha;
+    }
+
+    public JTextField getjTextFieldUsuario() {
+        return jTextFieldUsuario;
+    }
+
+    public void setjTextFieldUsuario(JTextField jTextFieldUsuario) {
+        this.jTextFieldUsuario = jTextFieldUsuario;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton CadastrarButton;
+    private javax.swing.JButton EntrarButton;
+    private javax.swing.JButton EsqueciSenhaButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldSenha;
+    private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }
