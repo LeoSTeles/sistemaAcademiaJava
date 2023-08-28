@@ -5,7 +5,10 @@
 package view;
 
 import dao.Conexao;
+import dao.UsuarioDAO;
 import java.sql.SQLException;
+import java.sql.Connection;
+import model.Usuario;
 
 /**
  *
@@ -13,6 +16,10 @@ import java.sql.SQLException;
  */
 public class Main {
     public static void main(String[] args) throws SQLException {
-        Conexao conexao = new Conexao();
+        Connection conexao = new Conexao().getConecction();
+        
+        Usuario usuario = new Usuario("Leo_STeles", "Leonardo10", true, "Leonardo Monte Alegre Sousa Teles");
+        UsuarioDAO usuarioDAO = new UsuarioDAO(conexao);
+        usuarioDAO.inserir(usuario);
     }
 }

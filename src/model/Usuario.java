@@ -10,16 +10,19 @@ package model;
  */
 public class Usuario {
     private int id;
-    private String nome;
+    private String usuario;
     private String senha;
+    private String nome;
     private boolean gestor;
 
-    public Usuario(int id, String nome, String senha, boolean gestor) {
-        this.id = id;
-        this.nome = nome;
+    public Usuario(String usuario, String senha,boolean gestor, String nome) {
+        this.usuario = usuario;
         this.senha = senha;
+        this.nome = nome;
         this.gestor = gestor;
     }
+    
+    
 
     public int getId() {
         return id;
@@ -29,12 +32,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getSenha() {
@@ -43,6 +46,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public boolean isGestor() {

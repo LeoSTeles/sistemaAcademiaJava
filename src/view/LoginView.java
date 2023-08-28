@@ -34,8 +34,6 @@ public class LoginView extends javax.swing.JFrame {
 
         EsqueciSenhaButton = new javax.swing.JButton();
         EntrarButton = new javax.swing.JButton();
-        CadastrarButton = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldSenha = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -61,14 +59,6 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EntrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 120, 30));
-
-        CadastrarButton.setBackground(new java.awt.Color(51, 51, 51));
-        CadastrarButton.setForeground(new java.awt.Color(255, 255, 255));
-        CadastrarButton.setText("Crie uma conta");
-        getContentPane().add(CadastrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 13, -1, 30));
-
-        jLabel6.setText("Novo por aqui?");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
 
         jLabel5.setText("Senha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
@@ -149,7 +139,6 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CadastrarButton;
     private javax.swing.JButton EntrarButton;
     private javax.swing.JButton EsqueciSenhaButton;
     private javax.swing.JLabel jLabel1;
@@ -157,7 +146,6 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextFieldSenha;
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables

@@ -26,7 +26,5 @@ public class Conexao {
             System.out.println(e);
         }
         return conn;
-//        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sistema_academia", "postgres", "admin");
-//        return conexao;
     }
 }
